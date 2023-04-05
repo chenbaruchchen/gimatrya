@@ -173,4 +173,4 @@ const db={
     
   }
   
-  module.export.default=db
+  module.exports=db
