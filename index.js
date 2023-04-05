@@ -3,5 +3,13 @@
 function helloNpm() {
     return "hello NPM"
   }
-  
-  module.exports = helloNpm
+
+function main(type,string) {
+    if (type==="basic-sum") {
+        const basicSum=require('./scripts/basic-sum')
+
+        return basicSum(string)
+    }
+}
+
+module.exports = helloNpm
