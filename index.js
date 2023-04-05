@@ -1,26 +1,23 @@
 //index.js
- 
-function main(type,string) {
-    if (type==="basic-sum") {
-        const basicSum=require('./scripts/basic-sum')
 
-        return basicSum(string)
+const basicSum = require('./scripts/basic-sum')
+const sidory = require('./scripts/sidory')
+const smallNumber = require('./scripts/small-number')
+
+function main(type, string) {
+
+    const OPERATIONS = {
+        "basic-sum": basicSum,
+        "sidory": sidory,
+        "small-number": smallNumber
     }
 
-    else if(type==="sidory"){
-        const sidory=require('./scripts/sidory')
-
-        return sidory(string)
-
-    }
-    else if(type==="small-number"){
-        const smallNumber=require('./scripts/small-number')
-
-        return smallNumber(string)
-
+    const func = OPERATIONS[type]
+    if (typeof func !== "function") {
+        throw new Error("unrecognized operation type, specify arguments as documented")
     }
 
-    else return "specify arguments as documented"
+    return func(string)
 }
 
 module.exports = main
