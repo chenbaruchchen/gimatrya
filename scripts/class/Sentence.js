@@ -1,3 +1,5 @@
+const getArrFromInt=require('../functions/getArrFromInt')
+
 const Word =require('./Word')
 class Sentence{
     constructor(string){
@@ -15,8 +17,22 @@ class Sentence{
         });
 
         this.psik=words.indexOf(',')
+
+        
+
+        
         
     }
+   
+    get listsValueOfWords(){
+        return this.list.map((word)=>{
+            return getArrFromInt(word.basicSum)
+        })
+  
+    }
+
+
+
 }
 
 module.exports=Sentence
