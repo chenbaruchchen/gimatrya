@@ -10,7 +10,7 @@ module.exports=function basicSum(string) {
 
         //// cheack if char in dictonary
         if(char in dictonery){
-            sum+=dictonery[char][0]
+            sum+=dictonery[char].value
         }
 
         
