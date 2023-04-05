@@ -2,5 +2,5 @@
 
 const main = require('gimatrya')
 
-let res=main("basic-sum",'ית,  הוhידע')
+let res=main("small-number",'בראשית ברא , אלוקים')
 console.log(res)

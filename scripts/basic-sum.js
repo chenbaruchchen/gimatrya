@@ -2,8 +2,7 @@ const dictonery=require('../dictonery')
 module.exports=function basicSum(string) {
 
     let sum=0
-    console.log(string)
-    for (let key in string) {
+     for (let key in string) {
 
         /// ?. בגלל שיש אפשרות לפסיק
  
