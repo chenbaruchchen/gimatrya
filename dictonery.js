@@ -1,11 +1,3 @@
-function basicSum_oneLiner(string) {
-  return string
-    .split()
-    .reduce((accumulator, char) => accumulator += dictonery[char][0] ?? 0, 0);
-}
-
-
-
 const HEBREW_CHARS = [
   "א", "ב", "ג", "ד", "ה", "ו", "ז", 'ח', 'ט', 'י', 'כ', 'ל', 'מ', 'נ', 'ס', 'ע', 'פ', 'צ', 'ק', 'ר', 'ש', 'ת'
 ];
