@@ -1,176 +1,34 @@
-const db={
-    "א": [
-      1,
-      1,
-      1,
-      1
-    ],
-     "ב": [
-      2,
-      2,
-      2,
-      3
-    ],
-     "ג": [
-      3,
-      3,
-      3,
-      6
-    ],
-      "ד": [
-      4,
-      4,
-      4,
-      10
-    ],
-      "ה": [
-      5,
-      5,
-      5,
-      15
-    ], 
-    "ו": [
-      6,
-      6,
-      6,
-      21
-    ],
-      "ז": [
-      7,
-      7,
-      7,
-      28
-    ],
-     "ח": [
-      8,
-      8,
-      8,
-      36
-    ],
-      "ט": [
-      9,
-      9,
-      9,
-      45
-    ],
-        "י": [
-      10,
-      10,
-      1,
-      55
-    ],
-   "כ": [
-      20,
-      11,
-      2,
-      75
-    ],
-  "ל": [
-      30,
-      12,
-      3,
-      105
-    ],
-  "מ": [
-      40,
-      13,
-      4,
-      145
-    ],
-    "נ": [
-      50,
-      14,
-      6,
-      195
-    ],
-    
-    "ס": [
-      60,
-      15,
-      6,
-      255
-    ],
-    "ע": [
-      70,
-      16,
-      7,
-      325
-    ],
-      "פ": [
-      80,
-      17,
-      8,
-      405
-    ],
-    
-      "צ": [
-      90,
-      18,
-      9,
-      495
-    ],
-      "ק": [
-      100,
-      19,
-      1,
-      595
-    ],
-      "ר": [
-      200,
-      20,
-      2,
-      795
-    ],
-      "ש":
-    [
-      300,
-      21,
-      3,
-      1095
-    ],
-  "ת": [
-      400,
-      22,
-      4,
-      1495
-    ],
-     "ך": [
-      500,
-      23,
-      5,
-      1995
-    ] ,
-      "ם": [
-      600,
-      24,
-      6,
-      2595
-    ],
-    "ן": [
-      700,
-      25,
-      7,
-      3295
-    ],
-      "ף": [
-      800,
-      26,
-      8,
-      4095
-    ],
-    
-      "ץ": [
-      900,
-      27,
-      9,
-      4995
-    ]
-    
-     
-    
-     
-    
-    
+const HEBREW_CHARS = [
+  "א", "ב", "ג", "ד", "ה", "ו", "ז", 'ח', 'ט', 'י', 'כ', 'ל', 'מ', 'נ', 'ס', 'ע', 'פ', 'צ', 'ק', 'ר', 'ש', 'ת'
+];
+const UNIQUE_HEBREW_CHARS = ["ך", "ם", "ן", "ף", "ץ"];
+
+const DB = init()
+
+
+function init(flavor = "NORMAL") {
+  const NORMAL = HEBREW_CHARS;
+  const WITH_UNIQUE = HEBREW_CHARS.concat(UNIQUE_HEBREW_CHARS);
+
+  const FLAVORS = { NORMAL, WITH_UNIQUE }
+
+  if (!FLAVORS[flavor] || FLAVORS[flavor].length <= 0) {
+    throw new Error(`can not init gimatric DB. unrecognized falvor was called on init()`)
   }
-  
-  module.exports=db
+
+  return Object.freeze(FLAVORS[flavor].reduce((data, c, i) => {
+    data[c] = {
+      char: c,
+      index: i,
+      value: gimatricValueFromIndex(i)
+    };
+
+    return data
+  }, {}));
+
+  function gimatricValueFromIndex(index) {
+    return ((index % 9) + 1) * Math.pow(10, (Math.floor((index) / 9)))
+  }
+}
+
+module.exports = DB
