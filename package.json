@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/chenbaruchchen/gimatrya/issues"
   },
-  "homepage": "https://github.com/chenbaruchchen/gimatrya#readme"
+  "homepage": "https://github.com/chenbaruchchen/gimatrya#readme",
+  "dependencies": {
+    "gimatrya": "^1.0.2"
+  }
 }

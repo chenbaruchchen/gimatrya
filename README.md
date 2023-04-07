@@ -12,8 +12,9 @@ current use only support basic sum
 
 ```javascript
  const gimatrya=require("gimatrya")
- // args = "type" String, string String
- gimatrya('basic-sum',"יהוידע חן")
+ // args = "type" String, string String, options:Object
+ gimatrya('basic-sum',"יהוידע חן",{endCharBigVal:bool})
+ 
 
 
  ```

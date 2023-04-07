@@ -3,6 +3,7 @@ const HEBREW_CHARS = [
 ];
 const UNIQUE_HEBREW_CHARS = ["ך", "ם", "ן", "ף", "ץ"];
 
+
 const DB = init()
 
 
@@ -31,4 +32,12 @@ function init(flavor = "NORMAL") {
   }
 }
 
-module.exports = DB
+// module.exports={
+//   defaults :DB,
+//   UNIQUE_HEBREW_CHARS_SMALL_NUMBER:UNIQUE_HEBREW_CHARS_SMALL_NUMBER
+// }
+module.exports=DB
+
+
+// module.exports=
+// {UNIQUE_HEBREW_CHARS_SMALL_NUMBER:UNIQUE_HEBREW_CHARS_SMALL_NUMBER}
