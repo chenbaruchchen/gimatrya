@@ -1,21 +1,10 @@
-// const dictonery=require('../dictonery')
-
-module.exports=function basicSum(string,dictonery) {
-
-    let sum=0
-     for (let key in string) {
-
-        /// ?. בגלל שיש אפשרות לפסיק
-
-        let char=string[key]
-
-        //// cheack if char in dictonary
-        if(char in dictonery){
-            sum+=dictonery[char].value
-        }
 
 
-    }
-
-    return sum
+const dictonery = require('../dictonery')
+module.exports = function basicSum(string,dictonery) {
+    return string
+        .split("")
+        .reduce((accumulator, char) =>
+            accumulator += dictonery[char] ? dictonery[char][0] : 0
+            , 0)
 }
