@@ -1,10 +1,10 @@
-const dictonery=require('../dictonery')
+// const dictonery=require('../dictonery')
 
 const Sentence=require('./class/Sentence')
 const sumAsMin=require('./functions/sumAsMin')
 
 
-module.exports=function sidory(string) {
+module.exports=function smallNumber(string,dictonery) {
     const sentence=new Sentence(string)
 
 

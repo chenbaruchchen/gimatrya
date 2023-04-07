@@ -7,10 +7,6 @@ const smallNumber = require('./scripts/small-number')
 const addToDictoneryEndCharVal=require('./scripts/functions/addToDictoneryEndCharVal')
 
 
-let r="tdfdאאע עעא sם"
-let res=main("basic-sum",r, {endCharBigVal:true})
-console.log(res)
-
 function main(type, string,{endCharBigVal}) {
 
     ////init db 
