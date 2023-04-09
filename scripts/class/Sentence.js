@@ -2,7 +2,8 @@ const getArrFromInt=require('../functions/getArrFromInt')
 
 const Word =require('./Word')
 class Sentence{
-    constructor(string){
+    constructor(string,dictonery){
+
         this.list=[]
         this.psik=null
 
@@ -12,9 +13,13 @@ class Sentence{
  
 
         words.forEach(element => {
-            let word =new Word(element)
+
+            let word =new Word(element,dictonery)
+ 
             this.list.push(word)
         });
+
+ 
 
         this.psik=words.indexOf(',')
 

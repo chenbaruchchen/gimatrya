@@ -6,9 +6,9 @@ const smallNumber = require('./scripts/small-number')
 
 const addToDictoneryEndCharVal=require('./scripts/functions/addToDictoneryEndCharVal')
 
-console.log(main("basic-sum",'להיםא'))
-
+ 
 function main(type, string,params) {
+    
 
     ////init db 
     ///defaults behavior endCharBigVal as False
@@ -25,7 +25,7 @@ function main(type, string,params) {
     if (typeof func !== "function") {
         throw new Error("unrecognized operation type, specify arguments as documented")
     }
-
+     
     return func(string,dictonery)
 }
 

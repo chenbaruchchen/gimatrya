@@ -5,9 +5,9 @@ const sumAsMin=require('./functions/sumAsMin')
 
 
 module.exports=function smallNumber(string,dictonery) {
-    const sentence=new Sentence(string)
 
-
+     const sentence=new Sentence(string,dictonery)
+ 
     /////get arr for each word
     // let listsValueOfWords=sentence.list.map((word)=>{
     //     return getArrFromInt(word.basicSum)
@@ -17,6 +17,7 @@ module.exports=function smallNumber(string,dictonery) {
      ////have to make change to the calculation of end char
      let smallNumber=0
      sentence.listsValueOfWords.map((wordValues)=>{
+        console.log('here')
         smallNumber+=sumAsMin(wordValues)
 
      })
@@ -25,7 +26,7 @@ module.exports=function smallNumber(string,dictonery) {
 
 
 
-
+     
     return smallNumber
     
 }

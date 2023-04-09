@@ -2,6 +2,7 @@
 
 const dictonery = require('../dictonery')
 module.exports = function basicSum(string,dictonery) {
+ 
     return string
         .split("")
         .reduce((accumulator, char) =>{
