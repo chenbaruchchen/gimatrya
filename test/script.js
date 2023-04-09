@@ -2,9 +2,14 @@
 
 const main = require('gimatrya')
 
-// let res=main("small-number",'בראשית ברא אלהים את השמים ואת הארץ ,')
+// let res=main("small-number",'בראשית ברא אלהים את השמים ואת הארץ ,'
 
-let s=" אלהים ברא בראשית"
-let r="tdfd sם"
-let res=main("basic-sum",r, {endCharBigVal:true})
-console.log("res")
+function cheackBasicSum() {
+    const parms={
+        endCharBigVal:true
+    }
+    const string="ם"
+    return main("basic-sum",string)
+}
+
+console.log(cheackBasicSum(),'e')

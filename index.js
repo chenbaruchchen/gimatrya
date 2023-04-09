@@ -6,14 +6,14 @@ const smallNumber = require('./scripts/small-number')
 
 const addToDictoneryEndCharVal=require('./scripts/functions/addToDictoneryEndCharVal')
 
+console.log(main("basic-sum",'להיםא'))
 
-function main(type, string,{endCharBigVal}) {
+function main(type, string,params) {
 
     ////init db 
-
-    const dictonery=addToDictoneryEndCharVal(endCharBigVal)
- 
-
+    ///defaults behavior endCharBigVal as False
+    const dictonery=addToDictoneryEndCharVal(params?.endCharBigVal)
+    
  
     const OPERATIONS = {
         "basic-sum": basicSum,
