@@ -18,4 +18,15 @@ function cheackSmallNumber() {
      return main("small-number",string )
 }
 
-console.log(cheackSmallNumber(),'e')
+function cheackSidory() {
+    /// endCharBigVal dosent metter here
+    // const parms={
+    //     endCharBigVal:true
+    // }
+    // const string="oים"
+     return main("sidory",string )
+}
+
+
+
+console.log(cheackSidory(),'e')
