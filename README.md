@@ -1,6 +1,11 @@
 # gimatrya
 
 current use only support basic sum
+github original build contains
+* sidory
+* small-number
+* basic-sum
+
 >use guide
 
 
